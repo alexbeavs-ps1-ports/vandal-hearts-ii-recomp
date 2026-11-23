@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Vandal Hearts II"
+id = "SLES-02469"
+players = 1
+exe = "disc/SLES_024.69"
+disc = "disc/Vandal Hearts II (Europe) (En,Fr,De).cue"
+discs = ["disc/Vandal Hearts II (Europe) (En,Fr,De).cue"]
+disc_serials = ["SLES-02469"]
+load_address = "0x8006C000"
+entry_pc = "0x800FED50"
+text_size = "0x00096800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Vandal Hearts II (Europe) (En,Fr,De).bin"
+cue_name = "Vandal Hearts II (Europe) (En,Fr,De).cue"
+boot_exe = "SLES_024.69"
+known_sizes = [322717920]
+known_md5 = [
+  "a730888a3936a91fe3d505defaf82d22",
+]
+known_sha1 = [
+  "8667b9b278f517cb2f1b051764496965a7e0c185",
+]
+known_crc32 = [
+  "e0089a44",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Vandal Hearts II Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "565ebcad29f12baf5242e79ce354e4500cfcbbaa12d94bb56b2184089fe64090"

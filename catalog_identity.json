@@ -1,0 +1,48 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Vandal Hearts II",
+    "id": "SLES-02469",
+    "boot_exe": "SLES_024.69"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Vandal Hearts II (Europe) (En,Fr,De).cue",
+    "bin_name": "Vandal Hearts II (Europe) (En,Fr,De).bin",
+    "track_counts": [
+      1
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 322717920,
+      "md5": "a730888a3936a91fe3d505defaf82d22",
+      "sha1": "8667b9b278f517cb2f1b051764496965a7e0c185",
+      "crc32": "e0089a44"
+    },
+    "disc_fp": "565ebcad29f12baf5242e79ce354e4500cfcbbaa12d94bb56b2184089fe64090"
+  },
+  "exe": {
+    "load_address": "0x8006C000",
+    "entry_pc": "0x800FED50",
+    "text_size": "0x00096800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 759,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [
+    "cue has only 1 TRACK — Track-01-only dumps fail multi-track netplay/catalog gates; prefer a full Redump cue."
+  ],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}
